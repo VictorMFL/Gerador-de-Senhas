@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&family=Inter:wght@400;600&family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+
+<body>
+    <main>
+        <section class="hero">
+            <h1>Gerador de senha</h1>
+            <p>Utilize o nosso gerador online para criar uma senha forte e segura.</p>
+        </section>
+        <section class="box">
+            <div class="password">
+                <div class="text">
+                    <input type="text" name="password" id="ipassword">
+                </div>
+                <div class="action">
+                    <button id="copy2">C</button>
+                    <button id="renew">R</button>
+                </div>
+            </div>
+            <div class="security-indicator">
+                <div id="security-indicator-bar" class="bar" style="width: 90%;"></div>
+            </div>
+        </section>
+
+        <section class="box-customize">
+            <h3 class="title">Personalizar</h3>
+            <div class="actions">
+                <p>Tamanho: <span id="password-length-text">16</span></p>
+            </div>
+            <input type="range" name="password-length" id="ipassword-length" value="16" min="4" max="64" onmousemove="contador(this.value)">
+            <menu>
+                <input type="checkbox" name="detalhes" id="imaiuscula">
+                <label for="imaiuscula">Maiúsculas</label><br>
+                <input type="checkbox" name="detalhes" id="inumeros">
+                <label for="inumeros">Números</label><br>
+                <input type="checkbox" name="detalhes" id="isimbolos">
+                <label for="isimbolos">Simbolos</label>
+            </menu>
+        </section>
+
+        <button id="copiar">Copiar senha</button>
+
+        <script src="index.js"></script>
+    </main>
+</body>
+
+</html>
