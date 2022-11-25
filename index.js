@@ -13,7 +13,7 @@ function generatePassword() {
     if (letraMaiusculaChecked.checked) {
         chars += letrasMaiusculas
     }
-    if (numeroChecked.ckecked) {
+    if (numeroChecked.checked) {
         chars += numeros
     }
     if (simboloChecked.checked) {
@@ -35,6 +35,12 @@ function generatePassword() {
 function copy() {
     navigator.clipboard.writeText(inputEl.value)
 }
+
+let copy2 = document.querySelector('button#copy2')
+copy2.addEventListener('click',copy )
+
+let atualizar = document.querySelector('button#atualizar')
+atualizar.addEventListener('click', generatePassword)
 
 function contador(value) {
     document.querySelector('span#password-length-text').innerHTML = value
@@ -62,7 +68,6 @@ simboloChecked.addEventListener('click', generatePassword)
 
 const copyButtonEl = document.querySelector('button#copiar')
 copyButtonEl.addEventListener('click', copy)
-
 
 
 generatePassword()
