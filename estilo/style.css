@@ -64,9 +64,9 @@ main {
     user-select: none;
 }
 
-div.action > button {
-    height: 40px;
-    width: 42px;
+div.action > img {
+    margin-top: 5px;
+    margin-right: 3px;
 }
 
 .security-indicator {
@@ -140,7 +140,7 @@ button#copiar {
     border-radius: 8px;
     display: block;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 35px;
     background-color: rgb(157, 32, 206);
     color: #fff;
     border: none;

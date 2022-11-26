@@ -1,8 +1,10 @@
 let passwordLength = 16
+
 const inputEl = document.querySelector('#ipassword')
 const letraMaiusculaChecked = document.querySelector('input#imaiuscula')
 const numeroChecked = document.querySelector('input#inumeros')
 const simboloChecked = document.querySelector('input#isimbolos')
+const barraSeguranca = document.querySelector('#security-indicator-bar')
 
 function generatePassword() {
     let chars = 'abcdefghjklmnpqrstuvwxyz'
@@ -30,17 +32,43 @@ function generatePassword() {
     inputEl.value = password
 
     console.log(password)
+    calcularPorcentagem()
+}
+
+function calcularPorcentagem() {
+    let porcentagem = Math.round((passwordLength / 64) * 25 +
+     (letraMaiusculaChecked.checked ? 15 : 0) +
+     (numeroChecked.checked ? 25 : 0) +
+     (simboloChecked.checked ? 35 : 0))
+
+    barraSeguranca.style.width = `${porcentagem}%`
+
+    if(porcentagem > 64) {
+        barraSeguranca.classList.remove('critical')
+        barraSeguranca.classList.remove('warning')
+        barraSeguranca.classList.add('safe')
+    } else if(porcentagem > 50) {
+        barraSeguranca.classList.remove('safe')
+        barraSeguranca.classList.remove('critical')
+        barraSeguranca.classList.add('warning')
+    } else {
+        barraSeguranca.classList.remove('safe')
+        barraSeguranca.classList.remove('warning')
+        barraSeguranca.classList.add('critical')
+    }
 }
 
 function copy() {
     navigator.clipboard.writeText(inputEl.value)
 }
 
-let copy2 = document.querySelector('button#copy2')
-copy2.addEventListener('click',copy )
 
-let atualizar = document.querySelector('button#atualizar')
-atualizar.addEventListener('click', generatePassword)
+let imgAtualizar = document.querySelector('#img-atualizar')
+imgAtualizar.addEventListener('click', generatePassword)
+
+let imgCopiar = document.querySelector('#img-copiar')
+imgCopiar.addEventListener('click',copy )
+
 
 function contador(value) {
     document.querySelector('span#password-length-text').innerHTML = value
