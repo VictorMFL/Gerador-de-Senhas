@@ -67,7 +67,7 @@ let imgAtualizar = document.querySelector('#img-atualizar')
 imgAtualizar.addEventListener('click', generatePassword)
 
 let imgCopiar = document.querySelector('#img-copiar')
-imgCopiar.addEventListener('click',copy )
+imgCopiar.addEventListener('click', copy)
 
 
 function contador(value) {
@@ -75,11 +75,11 @@ function contador(value) {
 
     if(value <= 25) {
         inputEl.style.fontSize = '3rem'
-    } else if(value <= 38) {
+    } else if (value <= 38) {
         inputEl.style.fontSize = '2em'
-    } else if(value <= 54) {
+    } else if (value <= 54) {
         inputEl.style.fontSize = '1.4em'
-    } else if(value < 64) {
+    } else if (value < 64) {
         inputEl.style.fontSize = '1.2em'
     }
 }
