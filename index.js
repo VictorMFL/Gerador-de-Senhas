@@ -73,7 +73,7 @@ imgCopiar.addEventListener('click', copy)
 function contador(value) {
     document.querySelector('span#password-length-text').innerHTML = value
 
-    if(value <= 25) {
+    if (value <= 25) {
         inputEl.style.fontSize = '3rem'
     } else if (value <= 38) {
         inputEl.style.fontSize = '2em'
